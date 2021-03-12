@@ -10,6 +10,7 @@
         echo "Hallo Welt!";
         echo "<h2>Hallo aus PHP</h2>";
         $Wert
+        Test
       ?>
   </body>
 </html>
