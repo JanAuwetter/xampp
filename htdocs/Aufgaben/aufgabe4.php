@@ -9,7 +9,8 @@ echo '<a href="../index.php">zurück zum Index</a><br><br>';
 
 
 echo "<form name='adresse' method='post' action='zahl.php'>";
-echo "<p>Zahl: <input name='zahl' id='zahl'><br></p>";
+echo "<p> Gebe eine Zahl zwischen 1-7 ein</p>";
+echo "<p>Zahl: <input name='zahl'><br></p>";
 echo "<p><input type='submit' name='Submit' value='Abschicken'></p>";
 echo "</form>";
 

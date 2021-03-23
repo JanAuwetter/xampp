@@ -9,6 +9,7 @@ Schreiben Sie eine Anwendung, die über ein Formular die Eingabe zweier Zahlen v
 
 
 echo "<form name='adresse' method='post' action='formularauswertung.php'>";
+echo "<p> Gebe 2 Zahlen ein: </p>";
 echo "<p>Zahl 1: <input name='zahl1' id='zahl1'><br></p>";
 echo "<p>Zahl 2: <input name='zahl2' id='zahl2'></p>";
 echo "<p><input type='submit' name='Submit' value='Abschicken'></p>";

@@ -6,5 +6,7 @@ echo '<li><a href="Aufgaben/aufgabe1.php">Aufgabe 1</a></li>';
 echo '<li><a href="Aufgaben/aufgabe2.php">Aufgabe 2</a></li>';
 echo '<li><a href="Aufgaben/aufgabe3.php">Aufgabe 3</a></li>';
 echo '<li><a href="Aufgaben/aufgabe4.php">Aufgabe 4</a></li>';
+echo '<li><a href="Aufgaben/aufgabe5.php">Aufgabe 5</a></li>';
+echo '<li><a href="Aufgaben/aufgabe6.php">Aufgabe 6</a></li>';
 echo '</ul>';
 ?>
