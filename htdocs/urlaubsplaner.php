@@ -23,46 +23,8 @@
                 echo "&nbsp; <input type='submit' name='Submit' value='berechnen'>";
                 echo "</form><br>";
 
-                // Neujahr
-            //    echo 'Neujahr: '. date ("d.m.Y", mktime(0, 0, 0, 01, 01, $Jahr)); // Stunde, Minute, Sekunde, Tag, Monat, Jahr
-              //  echo ' Es ist ein: ' . strftime("%A", mktime(0, 0, 0, 01, 01, $Jahr));
-                //echo "<br>";
-
-                // Ostersonntag
                 $Ostersonntag = ostergauss($Jahr);
-              //  echo "Ostersonntag: " . date('d.m.Y', $Ostersonntag); //Datum wird hier vom ostergauss.php berechnet
-              //  echo ' Es ist ein: ' . strftime("%A", $Ostersonntag);
-              //  echo "<br>";
 
-                // Karfreitag ist immer 2 Tage vor Ostersonntag, also Timestamp vom Ostsonntag - 2 Tage = - 2*86400 (sekunden)
-/*                echo "Karfreitag: " . date('d.m.Y', $Ostersonntag- 2*86400); //Datum wird hier vom ostergauss.php berechnet
-                echo ' Es ist ein: ' . strftime("%A", $Ostersonntag- 2*86400);
-                echo "<br>";
-
-                // Ostermontag
-                $Ostersonntag = ostergauss($Jahr);
-                echo "Ostermontag: " . date('d.m.Y', $Ostersonntag+ 1*86400); //Datum wird hier vom ostergauss.php berechnet
-                echo ' Es ist ein: ' . strftime("%A", $Ostersonntag+ 1*86400);
-                echo "<br>";
-
-                // Himmelfahrt
-                echo "Himmelfahrt:  " . date('d.m.Y', $Ostersonntag+ 39*86400);
-                echo ' Es ist ein: ' . strftime("%A", $Ostersonntag+ 39*86400);
-                echo "<br>";
-
-                // Pfingstmontag
-                echo "Pfingstmontag: " . date('d.m.Y', $Ostersonntag+ 50*86400);
-                echo ' Es ist ein: ' . strftime("%A", $Ostersonntag+ 50*86400);
-                echo "<br>";
-
-                // Frohenleichnam
-                echo "Frohenleichnam: " . date('d.m.Y', $Ostersonntag+ 60*86400);
-                echo ' Es ist ein: ' . strftime("%A", $Ostersonntag+ 60*86400);
-                echo "<br><br>";
-
-                // Tabellenausgabe
-                //$Daten[14][3] = "";
-*/
                 echo "<h3>Feiertage</h3>";
                 $Daten["Kopf"][0]="Bezeichnung";
                 $Daten["Kopf"][1]="Datum";
@@ -114,9 +76,15 @@
 
                 Tabellenausgabe($Daten);
 
+                echo "<h3>Brückentage</h3>";
                 $BT["Nach HF"][0] = "nach Himmelfahrt";
                 $BT["Nach HF"][1] = date('d.m.Y', $Ostersonntag+ 40*86400);
                 $BT["Nach HF"][2] = strftime("%A", $Ostersonntag+ 40*86400);
+
+                $BT["Nach FL"][0] = "nach Frohenleichnam";
+                $BT["Nach FL"][1] = date('d.m.Y', $Ostersonntag+ 61*86400);
+                $BT["Nach FL"][2] = strftime("%A", $Ostersonntag+ 61*86400);
+
 
                 // Weihnachten in einer Schleife für Test vom 27.12. bis 30.12., je nach Wochentag 2 bis 4 Urlaubstage erforderlich
                 $tagcount=1;
@@ -135,9 +103,24 @@
 
                 }
 
+                for ($Tag>01; $Tag<=31 ; $Tag++) {
+                    $Wochentag = strftime ("%A", mktime(0, 0, 0, 10, 03, $Jahr));
+                    if ($Wochentag == "Dienstag"){
+                          $BT["Tag der deutschen Einheit"][0] = "Vor Tag der deutschen Einheit ";
+                          $BT["Tag der deutschen Einheit"][1] = date("d.m.Y", mktime (0, 0 ,0, 10, 02, $Jahr));
+                          $BT["Tag der deutschen Einheit"][2] = strftime("%A", mktime(0, 0, 0, 10, 02, $Jahr));
+                      }
+                      if ($Wochentag == "Donnerstag"){
+                          $BT["Tag der deutschen Einheit"][0] = "Nach Tag der deutschen Einheit ";
+                          $BT["Tag der deutschen Einheit"][1] = date("d.m.Y", mktime (0, 0 ,0, 10, 04, $Jahr));
+                          $BT["Tag der deutschen Einheit"][2] = strftime("%A", mktime(0, 0, 0, 10, 04, $Jahr));
+                        }
+                }
 
 
-                echo "<h3>Brückentage</h3>";
+
+
+
                 Tabellenausgabe($BT);
                 //Weitertreiben für andere Feiertage, schauen ob sie auf Dienstag oder donnerstag fallen,
                 //um den Tag zwiscen Feiertag und Wochenende als Urlaubsvorschlag anbieten.
