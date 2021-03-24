@@ -43,8 +43,6 @@
                 $Daten["Neujahr"][1] = date("d.m.Y", mktime (0, 0 ,0, 01, 01, $Jahr));
                 $Daten["Neujahr"][2] = strftime("%A", mktime(0, 0, 0, 01, 01, $Jahr));
                 $Daten["Neujahr"][3] = "bundesweit";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 01, 01, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Neujahr"][0] = "vor Neujahr";
@@ -56,14 +54,11 @@
                           $BT["Neujahr"][1] = date("d.m.Y", mktime (0, 0 ,0, 01, 02, $Jahr));
                           $BT["Neujahr"][2] = strftime("%A", mktime(0, 0, 0, 01, 02, $Jahr));
                         }
-                }
 
                 $Daten["Heilige 3 Könige"][0] = "Heilige 3 Könige";
                 $Daten["Heilige 3 Könige"][1] = date("d.m.Y", mktime (0, 0 ,0, 1, 6, $Jahr));
                 $Daten["Heilige 3 Könige"][2] = strftime("%A", mktime(0, 0, 0, 1, 6, $Jahr));
                 $Daten["Heilige 3 Könige"][3] = "Baden-Württemberg, Bayern und Sachsen-Anhalt ";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 01, 6, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Heilige 3 Könige"][0] = "vor Heilige 3 Könige";
@@ -75,14 +70,11 @@
                           $BT["Heilige 3 Könige"][1] = date("d.m.Y", mktime (0, 0 ,0, 1, 7, $Jahr));
                           $BT["Heilige 3 Könige"][2] = strftime("%A", mktime(0, 0, 0, 1, 7, $Jahr));
                         }
-                }
 
                 $Daten["Frauentag  "][0] = "Frauentag ";
                 $Daten["Frauentag  "][1] = date("d.m.Y", mktime (0, 0 ,0, 3, 8, $Jahr));
                 $Daten["Frauentag  "][2] = strftime("%A", mktime(0, 0, 0, 3, 8, $Jahr));
                 $Daten["Frauentag  "][3] = "Berlin ";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 3, 8, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Frauentag"][0] = "vor Frauentag";
@@ -94,7 +86,6 @@
                           $BT["Frauentag"][1] = date("d.m.Y", mktime (0, 0 ,0, 3, 9, $Jahr));
                           $BT["Frauentag"][2] = strftime("%A", mktime(0, 0, 0, 3, 9, $Jahr));
                         }
-                }
 
                 $Daten["Karfreitag"][0] = "Karfreitag";
                 $Daten["Karfreitag"][1] = date('d.m.Y', $Ostersonntag- 2*86400);
@@ -110,8 +101,6 @@
                 $Daten["1. Mai"][1] = date("d.m.Y", mktime (0, 0 ,0, 05, 01, $Jahr));
                 $Daten["1. Mai"][2] = strftime("%A", mktime(0, 0, 0, 05, 01, $Jahr));
                 $Daten["1. Mai"][3] = "bundesweit";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 05, 01, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["1. Mai"][0] = "vor 1. Mai";
@@ -123,7 +112,6 @@
                           $BT["1. Mai"][1] = date("d.m.Y", mktime (0, 0 ,0, 05, 02, $Jahr));
                           $BT["1. Mai"][2] = strftime("%A", mktime(0, 0, 0, 05, 02, $Jahr));
                         }
-                }
 
                 $Daten["Himmelfahrt"][0] = "Himmelfahrt";
                 $Daten["Himmelfahrt"][1] = date('d.m.Y', $Ostersonntag+ 39*86400);
@@ -150,8 +138,6 @@
                 $Daten["Augsburger Hohes Friedensfest"][1] = date("d.m.Y", mktime (0, 0 ,0, 8, 8, $Jahr));
                 $Daten["Augsburger Hohes Friedensfest"][2] = strftime("%A", mktime(0, 0, 0, 8, 8, $Jahr));
                 $Daten["Augsburger Hohes Friedensfest"][3] = "Beschränkt auf das Augsburger Stadtgebiet";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 8, 8, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Augsburger Hohes Friedensfest"][0] = "vor Augsburger Hohes Friedensfest";
@@ -163,14 +149,11 @@
                           $BT["Augsburger Hohes Friedensfest"][1] = date("d.m.Y", mktime (0, 0 ,0, 8, 9, $Jahr));
                           $BT["Augsburger Hohes Friedensfest"][2] = strftime("%A", mktime(0, 0, 0, 8, 9, $Jahr));
                         }
-                }
 
                 $Daten["Mariä Himmelfahrt "][0] = "Mariä Himmelfahrt ";
                 $Daten["Mariä Himmelfahrt "][1] = date("d.m.Y", mktime (0, 0 ,0, 8, 15, $Jahr));
                 $Daten["Mariä Himmelfahrt "][2] = strftime("%A", mktime(0, 0, 0, 8, 15, $Jahr));
                 $Daten["Mariä Himmelfahrt "][3] = "Saarland und in katholischen Gemeinden Bayerns";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 8, 15, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Mariä Himmelfahrt "][0] = "vor Mariä Himmelfahrt ";
@@ -182,14 +165,11 @@
                           $BT["Mariä Himmelfahrt "][1] = date("d.m.Y", mktime (0, 0 ,0, 8, 16, $Jahr));
                           $BT["Mariä Himmelfahrt "][2] = strftime("%A", mktime(0, 0, 0, 8, 16, $Jahr));
                         }
-                }
 
                 $Daten["Weltkindertag "][0] = "Weltkindertag";
                 $Daten["Weltkindertag "][1] = date("d.m.Y", mktime (0, 0 ,0, 9, 20, $Jahr));
                 $Daten["Weltkindertag "][2] = strftime("%A", mktime(0, 0, 0, 9, 20, $Jahr));
                 $Daten["Weltkindertag "][3] = "Thüringen ";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 9, 20, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Weltkindertag "][0] = "vor Weltkindertag ";
@@ -201,14 +181,11 @@
                           $BT["Weltkindertag "][1] = date("d.m.Y", mktime (0, 0 ,0, 9, 21, $Jahr));
                           $BT["Weltkindertag "][2] = strftime("%A", mktime(0, 0, 0, 9, 21, $Jahr));
                         }
-                }
 
                 $Daten["Tag der deutschen Einheit"][0] = "Tag der deutschen Einheit ";
                 $Daten["Tag der deutschen Einheit"][1] = date("d.m.Y", mktime (0, 0 ,0, 10, 03, $Jahr));
                 $Daten["Tag der deutschen Einheit"][2] = strftime("%A", mktime(0, 0, 0, 10, 03, $Jahr));
                 $Daten["Tag der deutschen Einheit"][3] = "bundesweit";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 10, 03, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Tag der deutschen Einheit"][0] = "vor Tag der deutschen Einheit ";
@@ -220,14 +197,11 @@
                           $BT["Tag der deutschen Einheit"][1] = date("d.m.Y", mktime (0, 0 ,0, 10, 04, $Jahr));
                           $BT["Tag der deutschen Einheit"][2] = strftime("%A", mktime(0, 0, 0, 10, 04, $Jahr));
                         }
-                }
 
                 $Daten["Reformationstag"][0] = "Reformationstag";
                 $Daten["Reformationstag"][1] = date("d.m.Y", mktime (0, 0 ,0, 10, 31, $Jahr));
                 $Daten["Reformationstag"][2] = strftime("%A", mktime(0, 0, 0, 10, 31, $Jahr));
                 $Daten["Reformationstag"][3] = "bundesweit";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 10, 31, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Reformationstag"][0] = "vor Reformationstag ";
@@ -239,14 +213,11 @@
                           $BT["Reformationstag"][1] = date("d.m.Y", mktime (0, 0 ,0, 11, 1, $Jahr));
                           $BT["Reformationstag"][2] = strftime("%A", mktime(0, 0, 0, 11, 1, $Jahr));
                       }
-                }
 
                 $Daten["Allerheiligen"][0] = "Allerheiligen";
                 $Daten["Allerheiligen"][1] = date("d.m.Y", mktime (0, 0 ,0, 11, 01, $Jahr));
                 $Daten["Allerheiligen"][2] = strftime("%A", mktime(0, 0, 0, 11, 01, $Jahr));
                 $Daten["Allerheiligen"][3] = "Baden-Wüttenberg, Bayern, Nordrein-Westfalen, Rheinland-Pfalz und Saarland";
-                $Tag=0;
-                for ($Tag>01; $Tag<=31 ; $Tag++) {
                     $Wochentag = strftime ("%A", mktime(0, 0, 0, 11, 1, $Jahr));
                     if ($Wochentag == "Dienstag"){
                           $BT["Allerheiligen"][0] = "vor Allerheiligen ";
@@ -258,7 +229,7 @@
                           $BT["Allerheiligen"][1] = date("d.m.Y", mktime (0, 0 ,0, 11, 1, $Jahr));
                           $BT["Allerheiligen"][2] = strftime("%A", mktime(0, 0, 0, 11, 1, $Jahr));
                       }
-                }
+              
                 $Daten["1. Weihnachtstag"][0] = "1. Weihnachtstag";
                 $Daten["1. Weihnachtstag"][1] = date("d.m.Y", mktime (0, 0 ,0, 12, 25, $Jahr));
                 $Daten["1. Weihnachtstag"][2] = strftime("%A", mktime(0, 0, 0, 12, 25, $Jahr));
