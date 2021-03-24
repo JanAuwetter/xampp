@@ -229,7 +229,7 @@
                           $BT["Allerheiligen"][1] = date("d.m.Y", mktime (0, 0 ,0, 11, 1, $Jahr));
                           $BT["Allerheiligen"][2] = strftime("%A", mktime(0, 0, 0, 11, 1, $Jahr));
                       }
-              
+
                 $Daten["1. Weihnachtstag"][0] = "1. Weihnachtstag";
                 $Daten["1. Weihnachtstag"][1] = date("d.m.Y", mktime (0, 0 ,0, 12, 25, $Jahr));
                 $Daten["1. Weihnachtstag"][2] = strftime("%A", mktime(0, 0, 0, 12, 25, $Jahr));
@@ -269,23 +269,6 @@
                 echo "<h3>Brückentage</h3>";
 
                 Tabellenausgabe($BT);
-
-
-                // Weihnachten in einer Schleife für Test vom 27.12. bis 30.12., je nach Wochentag 2 bis 4 Urlaubstage erforderlich
-
-
-
-
-
-
-
-
-
-
-
-                //Weitertreiben für andere Feiertage, schauen ob sie auf Dienstag oder donnerstag fallen,
-                //um den Tag zwiscen Feiertag und Wochenende als Urlaubsvorschlag anbieten.
-                // Vorschlag:  als Schleife über alle bekannten Feiertage (+24.12.)
 
      ?>
   </body>
