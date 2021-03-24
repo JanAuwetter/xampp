@@ -12,13 +12,12 @@
     header('Content-Type: text/html; charset=iso-8859-1');      // Zeichensatz für Umlaute !!!
     // Formular mit Eingabefeld für Suchtext zum dynamischen erstellen der SQL Abfragen
 
-
+    $suchtext="";
     if (isset($_POST["suchen"])) {
         $suchtext=$_POST["suchen"];
         // folgende 2 Zeilen zum Leeren des Suchfeldes
-        $SQL="SELECT * from mitarbeiter where Name like '%$suchtext%' order by Name";
+        $SQL="Select * from mitarbeiter where Name like '%$suchtext%' order by Name";
         $suchtext="";
-
     }
 
     echo "<form name='suchfeld' method='post' action=$_SERVER[PHP_SELF]>";
@@ -26,19 +25,6 @@
     echo "&nbsp; <input type='submit' name='submit' value='Suchen'>";
     echo "</form><br>";
 
-  
-    if (isset($_POST["sqlsuchen"])) {
-        $sqlsuchtext=$_POST["sqlsuchen"];
-        // folgende 2 Zeilen zum Leeren des Suchfeldes
-        $SQL=$sqlsuchtext;
-        $sqlsuchtext="";
-
-    }
-
-    echo "<form name='sqlsuchfeld' method='post' action=$_SERVER[PHP_SELF]>";
-    echo "SQL String eingeben : &nbsp; <input type='text' size='100' name='sqlsuchen' value='$sqlsuchtext'>";
-    echo "&nbsp; <input type='submit' name='submit' value='absenden'>";
-    echo "</form><br>";
 
 
     // ab hier Datenbankhandling**********************************************************************
