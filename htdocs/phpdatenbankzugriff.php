@@ -12,9 +12,13 @@
     header('Content-Type: text/html; charset=iso-8859-1');      // Zeichensatz für Umlaute !!!
     // Formular mit Eingabefeld für Suchtext zum dynamischen erstellen der SQL Abfragen
 
-
+    $suchtext="";
     if (isset($_POST["suchen"])) {
         $suchtext=$_POST["suchen"];
+        if ($suchtext==""){
+          $suchtext="SELECT * from mitarbeiter";
+
+        }
         // folgende 2 Zeilen zum Leeren des Suchfeldes
         $SQL="SELECT * from mitarbeiter where Name like '%$suchtext%' order by Name";
         $suchtext="";
@@ -26,9 +30,13 @@
     echo "&nbsp; <input type='submit' name='submit' value='Suchen'>";
     echo "</form><br>";
 
-  
+    $sqlsuchtext="";
     if (isset($_POST["sqlsuchen"])) {
         $sqlsuchtext=$_POST["sqlsuchen"];
+        if ($sqlsuchtext==""){
+          $sqlsuchtext="SELECT * from mitarbeiter";
+
+        }
         // folgende 2 Zeilen zum Leeren des Suchfeldes
         $SQL=$sqlsuchtext;
         $sqlsuchtext="";
@@ -65,7 +73,6 @@
      //$SQL="Select * from mitarbeiter order by Name";    // Erstfassung fester SQL Text
      //$SQL="Select * from mitarbeiter where Name like '%$suchtext%' order by Name";
     // var_dump($SQL); // hiermit gibt man die Zeichenkette $SQL aus
-
      $ergebnis = mysqli_query($verbindung, $SQL);
      $zeilen = mysqli_num_rows($ergebnis);
 

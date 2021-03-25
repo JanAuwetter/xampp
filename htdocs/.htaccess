@@ -1,0 +1,4 @@
+AuthName "PHP-SQL Login-Bereich"
+AuthType Basic
+AuthUserFile c:/arbeit/xampp/htdocs/.htpasswd
+require valid-user
